@@ -21,17 +21,19 @@ Bu proje, makine öğrenmesi sistemlerindeki demografik (cinsiyet ve ırk temell
 ---
 
 ## 📌 İçindekiler
-- [Proje Mimarisi ve İş Akışı](#-proje-mimarisi-ve-iş-akışı)
-- [Adalet (Fairness) Metrikleri](#-adalet-fairness-metrikleri)
-- [Modeller ve Başlangıç Performansı](#-modeller-ve-başlangıç-performansı)
-- [XAI Bulguları ve Vekil (Proxy) Değişkenler](#-xai-bulguları-ve-vekil-proxy-değişkenler)
-- [Önyargı Azaltma ve Kilit Sonuçlar](#-önyargı-azaltma-ve-kilit-sonuçlar)
-- [Dosya Yapısı](#-dosya-yapısı)
-- [Kurulum ve Çalıştırma](#️-kurulum-ve-çalıştırma)
-- [Üretilen Grafikler ve Çıktılar](#-görsel-ve-analiz-çıktıları)
+- [Proje Mimarisi ve İş Akışı](#tr-proje-mimarisi)
+- [Adalet (Fairness) Metrikleri](#tr-fairness-metrikleri)
+- [Modeller ve Başlangıç Performansı](#tr-modeller-performans)
+- [XAI Bulguları ve Vekil (Proxy) Değişkenler](#tr-xai-proxy-analiz)
+- [Önyargı Azaltma ve Kilit Sonuçlar](#tr-onyargi-azaltma)
+- [Dosya Yapısı](#tr-dosya-yapisi)
+- [Kurulum ve Çalıştırma](#tr-kurulum-calistirma)
+- [Üretilen Grafikler ve Çıktılar](#tr-gorsel-ciktilar)
+- [Lisans & Teşekkür](#tr-lisans)
 
 ---
 
+<a id="tr-proje-mimarisi"></a>
 ## 🏗️ Proje Mimarisi ve İş Akışı
 
 Aşağıdaki şema, ham veri setinin yüklenmesinden başlayıp açıklanabilir adil modelin elde edilmesine kadar geçen 4 aşamalı ardışık boru hattını (pipeline) göstermektedir:
@@ -48,6 +50,7 @@ flowchart TD
 
 ---
 
+<a id="tr-fairness-metrikleri"></a>
 ## 📐 Adalet (Fairness) Metrikleri
 
 Projede algoritmaların adil karar verip vermediğini denetlemek için 3 temel metrik kullanılmıştır:
@@ -67,6 +70,7 @@ Projede algoritmaların adil karar verip vermediğini denetlemek için 3 temel m
 
 ---
 
+<a id="tr-modeller-performans"></a>
 ## 🧪 Modeller ve Başlangıç Performansı
 
 Eğitilen üç temel modelin test seti üzerindeki performans ve cinsiyet bazlı adalet metrikleri:
@@ -81,6 +85,7 @@ Eğitilen üç temel modelin test seti üzerindeki performans ve cinsiyet bazlı
 
 ---
 
+<a id="tr-xai-proxy-analiz"></a>
 ## 🔍 XAI Bulguları ve Vekil (Proxy) Değişkenler
 
 Siyah kutu modellerin iç mekanizmasını çözmek için 3 farklı açıklanabilirlik yöntemi kullanılmıştır:
@@ -98,6 +103,7 @@ Siyah kutu modellerin iç mekanizmasını çözmek için 3 farklı açıklanabil
 
 ---
 
+<a id="tr-onyargi-azaltma"></a>
 ## ⚖️ Önyargı Azaltma ve Kilit Sonuçlar
 
 Basitçe hassas özellikleri silmek ("Kör Yaklaşım") proxy değişkenler sebebiyle başarısız olduğu için, **Fairlearn `ThresholdOptimizer`** ile grup bazlı dinamik eşik optimizasyonu (Post-Processing) uygulanmıştır.
@@ -112,6 +118,7 @@ Basitçe hassas özellikleri silmek ("Kör Yaklaşım") proxy değişkenler sebe
 
 ---
 
+<a id="tr-dosya-yapisi"></a>
 ## 📂 Dosya Yapısı
 
 ```text
@@ -131,6 +138,7 @@ Basitçe hassas özellikleri silmek ("Kör Yaklaşım") proxy değişkenler sebe
 
 ---
 
+<a id="tr-kurulum-calistirma"></a>
 ## ⚙️ Kurulum ve Çalıştırma
 
 Projeyi yerel ortamınızda çalıştırmak için Python 3.9+ önerilir.
@@ -156,6 +164,7 @@ Projeyi yerel ortamınızda çalıştırmak için Python 3.9+ önerilir.
 
 ---
 
+<a id="tr-gorsel-ciktilar"></a>
 ## 📊 Görsel ve Analiz Çıktıları
 
 Pipeline başarıyla tamamlandığında `outputs/figures/` dizininde aşağıdaki grafikler oluşturulur:
@@ -179,6 +188,7 @@ Pipeline başarıyla tamamlandığında `outputs/figures/` dizininde aşağıdak
 
 ---
 
+<a id="tr-lisans"></a>
 ## 📜 Lisans & Teşekkür
 Bu çalışma Tasarım Süreçleri dersi kapsamında akademik bir proje olarak geliştirilmiştir. Veri seti [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php) üzerinden temin edilmiştir.
 
@@ -195,17 +205,19 @@ Using the **UCI Adult Census Income** benchmark dataset, **Logistic Regression**
 ---
 
 ## 📌 Table of Contents
-- [Architecture & Pipeline](#-architecture--pipeline)
-- [Fairness Metrics Guide](#-fairness-metrics-guide)
-- [Baseline Model Performance](#-baseline-model-performance)
-- [XAI Insights & Proxy Variables](#-xai-insights--proxy-variables)
-- [Bias Mitigation & Key Results](#-bias-mitigation--key-results)
-- [File Structure](#-file-structure-1)
-- [Installation & Quickstart](#%EF%B8%8F-installation--quickstart)
-- [Visual Artifacts Index](#-visual-artifacts-index)
+- [Architecture & Pipeline](#en-architecture-pipeline)
+- [Fairness Metrics Guide](#en-fairness-metrics)
+- [Baseline Model Performance](#en-baseline-models)
+- [XAI Insights & Proxy Variables](#en-xai-proxy-insights)
+- [Bias Mitigation & Key Results](#en-bias-mitigation)
+- [File Structure](#en-file-structure)
+- [Installation & Quickstart](#en-installation-quickstart)
+- [Visual Artifacts & Figures](#en-visual-artifacts)
+- [License & Acknowledgments](#en-license)
 
 ---
 
+<a id="en-architecture-pipeline"></a>
 ## 🏗️ Architecture & Pipeline
 
 ```mermaid
@@ -220,6 +232,7 @@ flowchart TD
 
 ---
 
+<a id="en-fairness-metrics"></a>
 ## 📐 Fairness Metrics Guide
 
 1. **Demographic Parity Difference:**
@@ -236,6 +249,7 @@ flowchart TD
 
 ---
 
+<a id="en-baseline-models"></a>
 ## 🧪 Baseline Model Performance
 
 | Model | Accuracy | F1-Score | ROC-AUC | Demographic Parity Diff | Disparate Impact Ratio | 80% Rule Status |
@@ -246,6 +260,7 @@ flowchart TD
 
 ---
 
+<a id="en-xai-proxy-insights"></a>
 ## 🔍 XAI Insights & Proxy Variables
 
 * **SHAP Interpretability:** Identifies `relationship_Husband` and `marital-status` as dominant proxy features that encode gender even when explicit protected attributes are removed (*Fairness through Blindness* fallacy).
@@ -254,6 +269,7 @@ flowchart TD
 
 ---
 
+<a id="en-bias-mitigation"></a>
 ## ⚖️ Bias Mitigation & Key Results
 
 Applying **Fairlearn `ThresholdOptimizer`** to calibrate group-specific decision thresholds:
@@ -266,6 +282,7 @@ Applying **Fairlearn `ThresholdOptimizer`** to calibrate group-specific decision
 
 ---
 
+<a id="en-file-structure"></a>
 ## 📂 File Structure
 
 ```text
@@ -285,6 +302,7 @@ Applying **Fairlearn `ThresholdOptimizer`** to calibrate group-specific decision
 
 ---
 
+<a id="en-installation-quickstart"></a>
 ## ⚙️ Installation & Quickstart
 
 1. **Clone repository:**
@@ -308,5 +326,31 @@ Applying **Fairlearn `ThresholdOptimizer`** to calibrate group-specific decision
 
 ---
 
+<a id="en-visual-artifacts"></a>
+## 📊 Visual Artifacts & Figures
+
+The pipeline generates the following analytical figures in `outputs/figures/`:
+
+| Pipeline Stage | Figure File | Description |
+|---|---|---|
+| **Data Analysis** | `1_gelir_dagilimi_demografik.png` | Income distribution percentages across gender and race |
+| | `1_sayisal_ozellik_dagilimi.png` | Distributions for age, work hours, and capital gain/loss |
+| | `1_korelasyon_matrisi.png` | Correlation matrix across numerical features |
+| **Model Evaluation** | `2_confusion_matrices.png` | Confusion matrices for LR, RF, and XGBoost |
+| | `2_roc_curves.png` | ROC-AUC curve comparisons across models |
+| | `2_fairness_metrics.png` | Fairness disparity metrics evaluated for sex and race |
+| | `2_pozitif_tahmin_oranlari.png` | Positive selection rates per demographic group |
+| **XAI Analysis** | `3_lime_aciklamalari.png` | LIME localized feature importance attributions |
+| | `3_shap_summary.png` | SHAP Beeswarm global impact distribution |
+| | `3_shap_bar.png` | SHAP mean absolute feature importance rankings |
+| | `3_shap_dependence_etkilesim.png` | SHAP dependence interactions (Age vs Working Hours) |
+| | `3_feature_flip_analizi.png` | Counterfactual gender perturbation impact graph |
+| **Results & Mitigation** | `4_onyargi_azaltma_dogru.png` | Before vs. After bias error reduction via ThresholdOptimizer |
+| | `4_xai_karsilastirma.png` | Performance and interpretability trade-off radar/comparison |
+
+---
+
+<a id="en-license"></a>
 ## 📜 License & Acknowledgments
 Academic project developed within Design Processes coursework. Data sourced from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php).
+
